@@ -30,7 +30,6 @@ namespace DatamuseDotNet
                 pairStrings.Add(pair.Key + "=" + HttpUtility.UrlEncode(pair.Value));
             }
             url += string.Join("&", pairStrings);
-            Console.WriteLine(url);
             return url;
         }
 
