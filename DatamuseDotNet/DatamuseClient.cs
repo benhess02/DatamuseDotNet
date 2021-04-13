@@ -114,5 +114,25 @@ namespace DatamuseDotNet
         {
             return Words(new RelationModifier(word, RelationType.ApproximateRhyme));
         }
+
+        public DatamuseResultItem[] Synonyms(string word)
+        {
+            return Words(new RelationModifier(word, RelationType.Synonym));
+        }
+
+        public DatamuseResultItem[] Antonyms(string word)
+        {
+            return Words(new RelationModifier(word, RelationType.Antonym));
+        }
+
+        public DatamuseResultItem[] AdjectivesUsedOn(string word)
+        {
+            return Words(new RelationModifier(word, RelationType.AdjectiveUsedOn));
+        }
+
+        public DatamuseResultItem[] NounsModifiedBy(string word)
+        {
+            return Words(new RelationModifier(word, RelationType.NounModifiedBy));
+        }
     }
 }
