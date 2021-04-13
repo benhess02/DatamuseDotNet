@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatamuseDotNet", "DatamuseDotNet\DatamuseDotNet.csproj", "{AE5E43C8-6DD0-4334-9E03-6F926575B574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{AD973829-BDA7-4670-88D6-614F892F20D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE5E43C8-6DD0-4334-9E03-6F926575B574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE5E43C8-6DD0-4334-9E03-6F926575B574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE5E43C8-6DD0-4334-9E03-6F926575B574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE5E43C8-6DD0-4334-9E03-6F926575B574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD973829-BDA7-4670-88D6-614F892F20D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD973829-BDA7-4670-88D6-614F892F20D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD973829-BDA7-4670-88D6-614F892F20D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD973829-BDA7-4670-88D6-614F892F20D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BDD2C30-4FBD-4E52-B69F-84E6D6B7178D}
+	EndGlobalSection
+EndGlobal
