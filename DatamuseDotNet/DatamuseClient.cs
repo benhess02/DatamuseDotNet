@@ -104,5 +104,15 @@ namespace DatamuseDotNet
         {
             return Words(new LeftContextModifier(word));
         }
+
+        public DatamuseResultItem[] Rhymes(string word)
+        {
+            return Words(new RelationModifier(word, RelationType.Rhyme));
+        }
+
+        public DatamuseResultItem[] ApproximateRhymes(string word)
+        {
+            return Words(new RelationModifier(word, RelationType.ApproximateRhyme));
+        }
     }
 }
