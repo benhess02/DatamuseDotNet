@@ -134,5 +134,10 @@ namespace DatamuseDotNet
         {
             return Words(new RelationModifier(word, RelationType.NounModifiedBy));
         }
+
+        public DatamuseResultItem[] Triggers(string word)
+        {
+            return Words(new RelationModifier(word, RelationType.Trigger));
+        }
     }
 }
