@@ -53,6 +53,10 @@ namespace DatamuseDotNet
                 if (resultObj[i]["defs"] != null)
                 {
                     nextResult.definitions = resultObj[i]["defs"].Values<string>().ToArray();
+                    if(resultObj[i]["defHeadword"] != null)
+                    {
+                        nextResult.headword = resultObj[i]["defHeadword"].Value<string>();
+                    }
                 }
 
                 if (resultObj[i]["numSyllables"] != null)

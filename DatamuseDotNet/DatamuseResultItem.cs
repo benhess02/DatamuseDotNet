@@ -10,6 +10,7 @@ namespace DatamuseDotNet
         public int score { get; set; }
         public string[] tags { get; set; } = new string[0];
         public string[] definitions { get; set; }
+        public string headword { get; set; }
         public int syllableCount { get; set; } = -1;
 
         public override string ToString()
