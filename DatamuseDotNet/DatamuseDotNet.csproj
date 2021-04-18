@@ -2,10 +2,33 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Ben Hess</Authors>
+    <Company />
+    <Description>A .NET library for using the Datamuse API.</Description>
+    <RepositoryUrl>https://github.com/ben-hess/DatamuseDotNet</RepositoryUrl>
+    <PackageTags>Datamuse API wrapper c# dotnet .NET dictionary thesaurus NLP</PackageTags>
+    <PackageProjectUrl></PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.1.0</Version>
+    <PackageIcon>logo.png</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <GenerateSerializationAssemblies></GenerateSerializationAssemblies>
+    <DocumentationFile>C:\Users\benhe\source\repos\DatamuseDotNet\DatamuseDotNet\DatamuseDotNet.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

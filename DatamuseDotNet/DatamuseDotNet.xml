@@ -1,0 +1,623 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DatamuseDotNet</name>
+    </assembly>
+    <members>
+        <member name="T:DatamuseDotNet.DatamuseClient">
+            <summary>
+            Represents a client for sending requests to the Datamuse API.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.DatamuseClient"/> class.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.CreateURL(DatamuseDotNet.DatamuseRequest)">
+            <summary>
+            Creates a URL from the given request.
+            </summary>
+            <param name="request">The request to create the URL from.</param>
+            <returns>The resulting URL as a string.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.Send(DatamuseDotNet.DatamuseRequest)">
+            <summary>
+            Sends a request to the API.
+            </summary>
+            <param name="request">The request to send.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.Words(DatamuseDotNet.IRequestModifier[])">
+            <summary>
+            Sends a request for a set of words using the provided request modifiers.
+            </summary>
+            <param name="modifiers">The request modifiers to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.Suggestions(System.String,DatamuseDotNet.IRequestModifier[])">
+            <summary>
+            Sends a request for a set of completion suggestions using the provided prefix and modifiers.
+            </summary>
+            <param name="prefix">The prefix for the suggestions.</param>
+            <param name="modifiers">The modifiers to use with the request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.MeansLike(System.String)">
+            <summary>
+            Sends a request for a set of words that have similar meanings to the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.SoundsLike(System.String)">
+            <summary>
+            Sends a request for a set of words that sound similar to the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.SpelledLike(System.String)">
+            <summary>
+            Sends a request for a set of words that have similar spellings to the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.Before(System.String)">
+            <summary>
+            Sends a request for a set of words that are likely to appear before the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.After(System.String)">
+            <summary>
+            Sends a request for a set of words that are likely to appear after the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.Rhymes(System.String)">
+            <summary>
+            Sends a request for a set of words that rhyme with the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.ApproximateRhymes(System.String)">
+            <summary>
+            Sends a request for a set of words that approximately rhyme with the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.Synonyms(System.String)">
+            <summary>
+            Sends a request for a set of words that are synonyms of the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.Antonyms(System.String)">
+            <summary>
+            Sends a request for a set of words that are antonyms of the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.AdjectivesUsedOn(System.String)">
+            <summary>
+            Sends a request for a set of adjectives that can be used on the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.NounsModifiedBy(System.String)">
+            <summary>
+            Sends a request for a set of nouns that can be modified by the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseClient.Triggers(System.String)">
+            <summary>
+            Sends a request for a set of words that are statistically associated with the provided word.
+            </summary>
+            <param name="word">The word to use with the request.</param>
+            <returns>The resulting items.</returns>
+        </member>
+        <member name="T:DatamuseDotNet.DatamuseRequest">
+            <summary>
+            Represents a request to the Datamuse API.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseRequest.GetEndpoint">
+            <summary>
+            Returns the API endpoint used by this request.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseRequest.GetCustomParameters">
+            <summary>
+            Returns the parameters which are specific to this request regardless of modifiers.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseRequest.#ctor(DatamuseDotNet.IRequestModifier[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.DatamuseRequest"/> class and applies the provided modifiers.
+            </summary>
+            <param name="modifiers">The modifiers to be applied.</param>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseRequest.ApplyModifier(DatamuseDotNet.IRequestModifier)">
+            <summary>
+            Applies the provided modifier.
+            </summary>
+            <param name="modifier">The modifier to be applied.</param>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseRequest.GetParameters">
+            <summary>
+            Returns the parameters to be used in this request.
+            </summary>
+        </member>
+        <member name="T:DatamuseDotNet.DatamuseResultItem">
+            <summary>
+            Represents an item in a response from the API.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.DatamuseResultItem.word">
+            <summary>
+            The word or phrase represented by this result item.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.DatamuseResultItem.score">
+            <summary>
+            The ranking score of this result item.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.DatamuseResultItem.tags">
+            <summary>
+            The tags included in this result.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.DatamuseResultItem.definitions">
+            <summary>
+            The definitions included in this result.
+            </summary>
+            <remarks>Only available if <see cref="T:DatamuseDotNet.MetadataModifier"/> is used with <see cref="F:DatamuseDotNet.MetadataType.Definitions"/>.</remarks>
+        </member>
+        <member name="P:DatamuseDotNet.DatamuseResultItem.headword">
+            <summary>
+            The form of the word which is defined by the definitions field.
+            </summary>
+            <remarks>Only available if <see cref="T:DatamuseDotNet.MetadataModifier"/> is used with <see cref="F:DatamuseDotNet.MetadataType.Definitions"/>.</remarks>
+        </member>
+        <member name="P:DatamuseDotNet.DatamuseResultItem.syllableCount">
+            <summary>
+            The number of syllables in this item's word.
+            </summary>
+            <remarks>Only available if <see cref="T:DatamuseDotNet.MetadataModifier"/> is used with <see cref="F:DatamuseDotNet.MetadataType.SyllableCount"/>.</remarks>
+        </member>
+        <member name="M:DatamuseDotNet.DatamuseResultItem.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.IRequestModifier">
+            <summary>
+            Can be used to create or modify the parameters of a <see cref="T:DatamuseDotNet.DatamuseRequest"/>.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.IRequestModifier.GetParameters">
+            <summary>
+            Returns the parameters that are created or modified by this modifier.
+            </summary>
+        </member>
+        <member name="T:DatamuseDotNet.LeftContextModifier">
+            <summary>
+            Provides the word that appears to the left of the target as a hint to the API.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.LeftContextModifier.word">
+            <summary>
+            The word to be used by this modifier.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.LeftContextModifier.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.LeftContextModifier"/> class.
+            </summary>
+            <param name="word">The word to be used by this modifier.</param>
+        </member>
+        <member name="M:DatamuseDotNet.LeftContextModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.MaxResultsModifier">
+            <summary>
+            Specifies the maximum number of results to be included in a responce.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.MaxResultsModifier.maxResults">
+            <summary>
+            The maximum number of results to be included in a responce.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.MaxResultsModifier.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.MaxResultsModifier"/> class.
+            </summary>
+            <param name="maxResults">The maximum number of results to be included in a responce.</param>
+        </member>
+        <member name="M:DatamuseDotNet.MaxResultsModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.MeansLikeModifier">
+            <summary>
+            Specifies that the API should only return words that have a similar meaning to the provided meaning.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.MeansLikeModifier.meaning">
+            <summary>
+            The meaning to use with this modifier.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.MeansLikeModifier.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.MeansLikeModifier"/> class.
+            </summary>
+            <param name="meaning">The meaning to use with this modifier.</param>
+        </member>
+        <member name="M:DatamuseDotNet.MeansLikeModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.MetadataModifier">
+            <summary>
+            Specifies the types of metadata to be included in a responce.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.MetadataModifier.metadataTypes">
+            <summary>
+            The types of metadata to be included in a responce.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.MetadataModifier.#ctor(DatamuseDotNet.MetadataType[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.MetadataModifier"/> class with the provided metadata types.
+            </summary>
+            <param name="metadataTypes">The types of metadata to be included in a responce.</param>
+        </member>
+        <member name="M:DatamuseDotNet.MetadataModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.MetadataType">
+            <summary>
+            Defines the types of metadata that can be included with a responce.
+            </summary>
+            <remarks>Used with <see cref="T:DatamuseDotNet.MetadataModifier"/>.</remarks>
+        </member>
+        <member name="F:DatamuseDotNet.MetadataType.Definitions">
+            <summary>
+            Include definitions with each response item.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.MetadataType.PartsOfSpeech">
+            <summary>
+            Include parts of speech with the tags of each response item.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.MetadataType.SyllableCount">
+            <summary>
+            Include the syllable count of each response item.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.MetadataType.Pronunciation">
+            <summary>
+            Include the pronunciation with the tags of each response item.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.MetadataType.WordFrequency">
+            <summary>
+            Include the word frequency with the tags of each response item.
+            </summary>
+        </member>
+        <member name="T:DatamuseDotNet.QueryEchoModifier">
+            <summary>
+            Specifies that the API should echo the query of the provided modifier in it's response.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.QueryEchoModifier.modifier">
+            <summary>
+            The modifier containing the query to be echoed.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.QueryEchoModifier.#ctor(DatamuseDotNet.IRequestModifier)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.QueryEchoModifier"/> class.
+            </summary>
+            <param name="modifier">The modifier containing the query to be echoed.</param>
+        </member>
+        <member name="M:DatamuseDotNet.QueryEchoModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.RelationModifier">
+            <summary>
+            Specifies that the API should only return words that have the provided relation(s) to the provided word.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.RelationModifier.word">
+            <summary>
+            The word to be used by this modifier.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.RelationModifier.relationTypes">
+            <summary>
+            The relation type to be used by this modifier.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.RelationModifier.#ctor(System.String,DatamuseDotNet.RelationType[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.RelationModifier"/> class.
+            </summary>
+            <param name="word">The word to be used by this modifier.</param>
+            <param name="relationTypes">The relation type to be used by this modifier.</param>
+        </member>
+        <member name="M:DatamuseDotNet.RelationModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.RelationType">
+            <summary>
+            Defines the types of relations between two words.
+            </summary>
+            <remarks>Used with <see cref="T:DatamuseDotNet.RelationModifier"/>.</remarks>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.NounModifiedBy">
+            <summary>
+            The target word is a noun that is modified by the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.AdjectiveUsedOn">
+            <summary>
+            The target word is a adjective that is used on the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.Synonym">
+            <summary>
+            The target word is a synonym of the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.Trigger">
+            <summary>
+            The target word is statistically associated with the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.Antonym">
+            <summary>
+            The target word is an antonym of the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.KindOf">
+            <summary>
+            The target word is a kind of the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.MoreGeneralThan">
+            <summary>
+            The target word is more general than the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.Comprises">
+            <summary>
+            The target word comprises the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.PartOf">
+            <summary>
+            The target word is part of the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.FrequentFollower">
+            <summary>
+            The target word frequently follows the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.FrequentPredecessor">
+            <summary>
+            The target word frequently appears before the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.Rhyme">
+            <summary>
+            The target word rhymes with the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.ApproximateRhyme">
+            <summary>
+            The target word is an approximate rhyme of the provided word.
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.Homophone">
+            <summary>
+            The target word is a homophone of the provided word. (It sounds the same.)
+            </summary>
+        </member>
+        <member name="F:DatamuseDotNet.RelationType.ConsonantMatch">
+            <summary>
+            The consonants of the target word match those of the provided word.
+            </summary>
+        </member>
+        <member name="T:DatamuseDotNet.RightContextModifier">
+            <summary>
+            Provides the word that appears to the right of the target as a hint to the API.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.RightContextModifier.word">
+            <summary>
+            The word to be used by this modifier.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.RightContextModifier.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.RightContextModifier"/> class.
+            </summary>
+            <param name="word">The word to be used by this modifier.</param>
+        </member>
+        <member name="M:DatamuseDotNet.RightContextModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.SoundsLikeModifier">
+            <summary>
+            Specifies that the API should only return words that sound similar to the provided word.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.SoundsLikeModifier.word">
+            <summary>
+            The word to be used by this modifier.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.SoundsLikeModifier.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.SoundsLikeModifier"/> class.
+            </summary>
+            <param name="word">The word to be used by this modifier.</param>
+        </member>
+        <member name="M:DatamuseDotNet.SoundsLikeModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.SpelledLikeModifier">
+            <summary>
+            Specifies that the API should only return words that sound similar to the provided word.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.SpelledLikeModifier.word">
+            <summary>
+            The word to be used by this modifier.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.SpelledLikeModifier.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.SpelledLikeModifier"/> class.
+            </summary>
+            <param name="word">The word to be used by this modifier.</param>
+        </member>
+        <member name="M:DatamuseDotNet.SpelledLikeModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.SuggestionsRequest">
+            <summary>
+            Represents a request for a set of completion suggestions.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.SuggestionsRequest.prefix">
+            <summary>
+            The prefix for the suggestions.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.SuggestionsRequest.#ctor(System.String,DatamuseDotNet.IRequestModifier[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.SuggestionsRequest"/> class with the provided prefix and applies the provided modifiers.
+            </summary>
+            <param name="prefix">The prefix for the suggestions.</param>
+            <param name="modifiers">The modifiers to be applied.</param>
+        </member>
+        <member name="M:DatamuseDotNet.SuggestionsRequest.GetEndpoint">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatamuseDotNet.SuggestionsRequest.GetCustomParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.TopicModifier">
+            <summary>
+            Uses the provided set of words as a hint to the API about the topic of the target text.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.TopicModifier.topicWords">
+            <summary>
+            A set of words that define the intended topic.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.TopicModifier.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.TopicModifier"/> class.
+            </summary>
+            <param name="topicWords">A set of words that define the intended topic.</param>
+        </member>
+        <member name="M:DatamuseDotNet.TopicModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.VocabularyModifier">
+            <summary>
+            Specifies that the API should use the vocabulary corresponding to the provided name.
+            </summary>
+        </member>
+        <member name="P:DatamuseDotNet.VocabularyModifier.vocabularyName">
+            <summary>
+            The name of the voaculary to be used.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.VocabularyModifier.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.VocabularyModifier"/> class.
+            </summary>
+            <param name="vocabularyName">The name of the voaculary to be used.</param>
+        </member>
+        <member name="M:DatamuseDotNet.VocabularyModifier.GetParameters">
+            <inheritdoc/>
+        </member>
+        <member name="T:DatamuseDotNet.Wildcard">
+            <summary>
+            Provides a set of methods for generating wildcard search strings.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.Wildcard.Length(System.Int32)">
+            <summary>
+            Matches with strings of the provided length.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.Wildcard.MinLength(System.Int32)">
+            <summary>
+            Matches with strings of at least the provided length.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.Wildcard.StartsWith(System.String)">
+            <summary>
+            Matches with strings that start with the provided string.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.Wildcard.StartsWith(System.String,System.Int32)">
+            <summary>
+            Matches with strings that start with the provided string and are of the provided total length.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.Wildcard.EndsWith(System.String)">
+            <summary>
+            Matches with strings that end with the provided string.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.Wildcard.EndsWith(System.String,System.Int32)">
+            <summary>
+            Matches with strings that end with the provided string and are of the provided total length.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.Wildcard.StartsEndsWith(System.String,System.String)">
+            <summary>
+            Matches with strings that start and end with the provided strings.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.Wildcard.StartsEndsWith(System.String,System.String,System.Int32)">
+            <summary>
+            Matches with strings that start and end with the provided strings and are of the provided total length.
+            </summary>
+        </member>
+        <member name="T:DatamuseDotNet.WordsRequest">
+            <summary>
+            Represents a request for a set of words.
+            </summary>
+        </member>
+        <member name="M:DatamuseDotNet.WordsRequest.#ctor(DatamuseDotNet.IRequestModifier[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatamuseDotNet.WordsRequest"/> class and applies the provided modifiers.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="M:DatamuseDotNet.WordsRequest.GetEndpoint">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
