@@ -1,7 +1,7 @@
 # DatamuseDotNet
  A .NET library for using the [Datamuse API](https://www.datamuse.com/api/).
 ## Examples
-### List words that rhyme with "car"
+### Words that rhyme with "car"
 ```C#
 DatamuseClient client = new DatamuseClient();
 DatamuseResultItem[] results = client.Rhymes("Car");
